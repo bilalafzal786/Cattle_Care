@@ -71,7 +71,7 @@ const Navbarr = () => {
             <LinkContainer to="/">
               <Nav.Link id="color">HOME</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/subscriptions">
+            <LinkContainer to="/payment">
               <Nav.Link id="color">SUBSCRIPTIONS</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/about">
