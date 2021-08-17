@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.603672fe.chunk.css",
+    "main.js": "/static/js/main.815ad1d6.chunk.js",
+    "main.js.map": "/static/js/main.815ad1d6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2f49d761.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2f49d761.js.map",
+    "static/css/2.72b56271.chunk.css": "/static/css/2.72b56271.chunk.css",
+    "static/js/2.8171f4ea.chunk.js": "/static/js/2.8171f4ea.chunk.js",
+    "static/js/2.8171f4ea.chunk.js.map": "/static/js/2.8171f4ea.chunk.js.map",
+    "static/js/3.de130372.chunk.js": "/static/js/3.de130372.chunk.js",
+    "static/js/3.de130372.chunk.js.map": "/static/js/3.de130372.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.72b56271.chunk.css.map": "/static/css/2.72b56271.chunk.css.map",
+    "static/css/main.603672fe.chunk.css.map": "/static/css/main.603672fe.chunk.css.map",
+    "static/js/2.8171f4ea.chunk.js.LICENSE.txt": "/static/js/2.8171f4ea.chunk.js.LICENSE.txt",
+    "static/media/creditcard2.294b09d9.png": "/static/media/creditcard2.294b09d9.png",
+    "static/media/guarantee.8dcd7253.png": "/static/media/guarantee.8dcd7253.png",
+    "static/media/jazzcashpng.cd250dcd.png": "/static/media/jazzcashpng.cd250dcd.png",
+    "static/media/logo.649e641e.png": "/static/media/logo.649e641e.png",
+    "static/media/pngegg.2a17d067.png": "/static/media/pngegg.2a17d067.png",
+    "static/media/rename.32e91bf4.jpg": "/static/media/rename.32e91bf4.jpg",
+    "static/media/styles.css": "/static/media/revicons.e8746a62.woff",
+    "static/media/round.e0e97353.jpg": "/static/media/round.e0e97353.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2f49d761.js",
+    "static/css/2.72b56271.chunk.css",
+    "static/js/2.8171f4ea.chunk.js",
+    "static/css/main.603672fe.chunk.css",
+    "static/js/main.815ad1d6.chunk.js"
+  ]
+}
