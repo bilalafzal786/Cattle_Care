@@ -13,6 +13,8 @@ const Register = (props) => {
     firstName: "",
     lastName: "",
     email: "",
+    tel: "",
+    address: "",
     password: "",
     password2: "",
   });
@@ -25,7 +27,8 @@ const Register = (props) => {
       clearErrors();
     }
   }, [error, isAuthenticated, props.history]);
-  const { firstName, lastName, email, password, password2 } = user;
+  const { firstName, lastName, email, tel, address, password, password2 } =
+    user;
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
@@ -34,6 +37,8 @@ const Register = (props) => {
       firstName === "" ||
       lastName === "" ||
       email === "" ||
+      tel === "" ||
+      address === "" ||
       password === "" ||
       password2 === ""
     )
@@ -45,6 +50,8 @@ const Register = (props) => {
         firstName,
         lastName,
         email,
+        tel,
+        address,
         password,
       });
       console.log("USer registered");
@@ -54,13 +61,19 @@ const Register = (props) => {
     <Fragment>
       <div className="center-container " style={style.centerContainer}>
         <div className="container xborder  mt-5 rounded">
-          <div className="row">
-            <div className="col-lg-6 col-sm-12 text-danger p-4">
-              <h6 className="text-primary">Cattle Care</h6>
-              <h4 className="mt-3 text-dark">Create Cattle Care Account</h4>
-              <p className="text-dark">to use our services</p>
-              <form className="text-secondary" onSubmit={onSubmit}>
-                <div className="row">
+          <div className="row flex-column align-items-center">
+            <img src={logo} alt="" style={style.logoImage} />
+            <h6 className="text-primary">Cattle Care</h6>
+            <h4 className="mt-3 text-dark">Create Cattle Care Account</h4>
+            <p className="text-dark">to use our services</p>
+          </div>
+          <div className="row ">
+            <form
+              className="text-secondary d-flex flex-wrap justify-content-center"
+              onSubmit={onSubmit}
+            >
+              <div className="col-lg-6 col-sm-12  p-lg-4 pb-sm-0 mb-sm-0 ">
+                <div className="row flex-row">
                   <div className="col-lg-6 col-sm-12">
                     <div className="form-group">
                       <label htmlFor="firstName">First name</label>
@@ -86,26 +99,50 @@ const Register = (props) => {
                     </div>
                   </div>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="email">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    onChange={onChange}
-                    value={email}
-                    required
-                  />
+                <div className="row">
+                  <div className="col">
+                    <div className="form-group">
+                      <label htmlFor="email">Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        onChange={onChange}
+                        value={email}
+                        required
+                      />
+                    </div>
+                  </div>
                 </div>
-                {/* <div className="form-group">
-                  <label htmlFor="tel">Phone number</label>
-                  <input
-                    type="tel"
-                    name="tel"
-                    // onChange={onChange}
-                    // value={email}
-                    required
-                  />
-                </div> */}
+                <div className="row">
+                  <div className="col">
+                    <div className="form-group">
+                      <label htmlFor="tel">Phone number</label>
+                      <input
+                        type="tel"
+                        name="tel"
+                        onChange={onChange}
+                        value={tel}
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 p-lg-4 pt-sm-0 mt-sm-0 col-sm-12  border-left ">
+                <div className="row">
+                  <div className="col">
+                    <div className="form-group">
+                      <label htmlFor="address">Address</label>
+                      <input
+                        type="text"
+                        name="address"
+                        onChange={onChange}
+                        value={address}
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
                 <div className="row">
                   <div className="col-lg-6 col-sm-12">
                     <div className="form-group">
@@ -138,27 +175,16 @@ const Register = (props) => {
                   Use 8 or more characters with a mix of letters, numbers &#38;
                   symbols
                 </p>
-
-                <input
-                  type="submit"
-                  value="Register"
-                  className="btn btn-primary btn-block"
-                />
-                <p className="mt-2 click-here">
-                  If you have already account{" "}
-                  <Link to="/login">login here.</Link>
-                </p>
-              </form>
-            </div>
-            <div
-              className="col   d-sm-block d-none logoBox "
-              style={style.logoBox}
-            >
-              <img src={logo} alt="" style={style.logoImage} />
-              <p className="text-center">
-                Your cattle is our priority.<br></br>Be Bold
+              </div>
+              <input
+                type="submit"
+                value="Register"
+                className="btn btn-primary btn-block m-lg-4"
+              />
+              <p className="mt-2 click-here  ">
+                If you have already account <Link to="/login">login here.</Link>
               </p>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -172,7 +198,8 @@ const style = {
   },
   logoBox: {},
   logoImage: {
-    width: "100%",
+    width: "15%",
+    margin: "20px",
     height: "auto",
   },
 };

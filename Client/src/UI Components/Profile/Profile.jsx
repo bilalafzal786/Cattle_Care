@@ -1,7 +1,14 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useContext } from "react";
 import Former1 from "../images/former1.jpg";
+import AuthContext from "../../context/auth/authContext";
 
 const Profile = () => {
+  const authContext = useContext(AuthContext);
+  const { user, loadUser } = authContext;
+  useEffect(() => {
+    loadUser();
+    // eslint-disable-next-line
+  }, []);
   return (
     <Fragment>
       <div className="container">
@@ -14,13 +21,15 @@ const Profile = () => {
                     <div className="user-avatar">
                       <img src={Former1} alt="Akbar khan" />
                     </div>
-                    <h5 className="user-name">Akbar Khan</h5>
+                    <h5 className="user-name">
+                      {user && user.firstName + " " + user.lastName}
+                    </h5>
                   </div>
                   <div className="about">
                     <h5>About</h5>
                     <p>
-                      I'm akbar khan form Larkana Sindh. I have a cattle form 0f
-                      200 animals.
+                      I'm {user && user.firstName + " " + user.lastName} form{" "}
+                      {user.address}. I have a cattle form 0f 200 animals.
                     </p>
                   </div>
                 </div>
@@ -41,7 +50,7 @@ const Profile = () => {
                         type="text"
                         className="form-control"
                         id="fullName"
-                        placeholder="Akbar Khan"
+                        placeholder={user.firstName + " " + user.lastName}
                       />
                     </div>
                   </div>
@@ -52,7 +61,7 @@ const Profile = () => {
                         type="email"
                         className="form-control"
                         id="eMail"
-                        placeholder="akbarkhan@gmail.com"
+                        placeholder={user.email}
                       />
                     </div>
                   </div>
@@ -63,7 +72,7 @@ const Profile = () => {
                         type="text"
                         className="form-control"
                         id="phone"
-                        placeholder="03358568171"
+                        placeholder={user.tel}
                       />
                     </div>
                   </div>

@@ -12,8 +12,10 @@ router.post(
   "/",
   [
     check("firstName", "First Name is required").not().isEmpty(),
-    check("lastName", "Last name is required").not().isEmpty(),
+    check("lastName", "Last Name is required").not().isEmpty(),
     check("email", "Please enter a valid email").isEmail(),
+    check("tel", "Please enter a valid phone number"),
+    check("address", "Please enter a valid address"),
     check(
       "password",
       "Please enter a password with 6 or more characters"
@@ -26,13 +28,13 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, email, tel, address, password } = req.body;
     try {
       let user = await User.findOne({ email: email });
       if (user) {
         return res.status(400).json({ msg: "User already exist" });
       }
-      user = new User({ firstName, lastName, email, password });
+      user = new User({ firstName, lastName, tel, address, email, password });
       const salt = await bcrypt.genSalt(10);
       user.password = await bcrypt.hash(password, salt);
       await user.save();

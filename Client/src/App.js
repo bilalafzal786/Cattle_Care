@@ -16,6 +16,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Alerts from "./UI Components/Alerts";
 import setAuthToken from "./utils/setAuthToken";
 import Dashboard from "./UI Components/Farmer/Dashboard/Dashboard";
+import Charts from "./UI Components/Barcharts/Charts";
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
@@ -32,6 +33,7 @@ function App() {
               <Route exact path="/subscriptions" component={Subscriptions} />
               <Route exact path="/about" component={About} />
               <Route exact path="/login" component={Login} />
+              {/* <Route exact path="/charts" component={Charts} /> */}
               <Route exact path="/register" component={Register} />
               <Route exact path="/notlogin" component={NotLogin} />
               <Route exact path="/payment" component={Payment} />

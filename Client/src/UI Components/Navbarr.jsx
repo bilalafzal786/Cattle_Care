@@ -22,7 +22,14 @@ const Navbarr = () => {
           <span className="hide-sm">Logout</span>
         </a>
       </li> */}
-      <Nav.Link id="color">{user && user.firstName + user.lastName}</Nav.Link>
+      <LinkContainer to="/profile">
+        <div className="rounded-circle bg-dark">
+          <Nav.Link id="color">
+            {user && user.firstName.charAt(0) + user.lastName.charAt(0)}
+          </Nav.Link>
+        </div>
+      </LinkContainer>
+
       <LinkContainer onClick={onLogout} to="#!">
         <Nav.Link id="color" className="hide-sm">
           Logout
